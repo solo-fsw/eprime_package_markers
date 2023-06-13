@@ -1,5 +1,6 @@
 # E-Prime data files
-*.edat
+*.edat3
+*.tsv
 *.wndpos
 *.ebs3
 *.txt
