@@ -67,7 +67,7 @@ For the UsbParMarker it is possible to switch the Leds off (and back on). For th
 
 The UsbParMarkerLeds routine uses the following parameters:
 - **c:** The experiment context allows the user to add variables to the experiment. The routines in the PackageFile may optionally use the experiment context to retrieve the current values of attributes stored in the context. The context is typically the first parameter of every PackageFile routine. Leave at default c.
-- **Leds:** The leds on the UsbParMarker can be switched on (default) or off by specifying "On" or "Off". Or the leds can be tested by specifying "Test", then the leds will flash 2 times with 1000 ms interval. After the test, the leds are always turned on. Note: only works with UsbParMarker with hardware version 3 or higher. 
+- **Leds:** The leds on the UsbParMarker can be switched on (default) or off by specifying "On" or "Off". Or the leds can be tested by specifying "Test", then the leds will flash 2 times with 1000 ms interval. After the test, the leds are always turned on. Note: only works with UsbParMarker with hardware version 3 or higher.
 
 ### Object Placement and Timing
 It is important to note that the Markers routines do not have a visual component. Thus, during the execution of the Markers objects, what was already presented on the screen, will stay on the screen.
@@ -76,6 +76,17 @@ To obtain the most accurate timing of a marker (i.e. the marker is sent as close
 
 ### Using Multiple Marker Devices
 It is not possible to use the Marker package with multiple marker devices. Only one marker device can be used with this package.
+
+## Timing Test
+Timing of the E-Prime markers package was tested by comparing the onset and offset of pulses sent with the markers package to the UsbParMarker, with the onset and offset of pulses sent to the LPT port. Both signals were recorded with BIOPAC AcqKnowledge (LPT with Digital input, UsbParMarker in Analog channel 1). 
+A total of 90 pulses were sent to both devices. On average, a delay of 183.3 us was found when comparing both onsets and offsets, with a maximum delay of 550 us. 
+Breaking it down, pulses were sent in three different ways, 1. first to the UsbParMarker, then to the LPT port, 2. first to the LPT port, then to the UsbParMarker, 3. both pulses were set as task events of a stimulus, and thus were set high at the onset of the stimulus, and low at the offset of the stimulus.
+1.	When sending a pulse first to the UsbParMarker and then to the LPT port, an average difference of 301.7 us (max 550 us) was found when comparing the onset of the pulses and an average difference of 187.7 us (max 250 us) was found when comparing the offset of the pulses (tested with 30 pulses). 
+2.	When sending a pulse first to the LPT port and then to the UsbParMarker, an average difference of 108.3 us (max 150 us) was found when comparing the onset of the pulses and an average difference of 203.3 us (max 350 us) was found when comparing the offset of the pulses (tested with 30 pulses).
+3.	When sending pulses as task events, an average difference of 198.3 us (max 250 us) was found when comparing the onset of the pulses and an average difference of 101.7 us (max 150 us) was found when comparing the offset of the pulses (tested with 30 pulses).
+
+The timing data can be found in the TimingTest folder.
+
 
 
 
