@@ -29,10 +29,10 @@ The OpenMarkerDevice routine uses the following parameters:
 - **c:** The experiment context allows the user to add variables to the experiment. The routines in the PackageFile may optionally use the experiment context to retrieve the current values of attributes stored in the context. The context is typically the first parameter of every PackageFile routine. Leave at default c.
 - **DeviceType:** Specify the Device Type: "UsbParMarker" or "Eva". The Device Type must be a String, so make sure to add the quotation marks.
 - **CrashOnMarkerErrors:** Optional: set to True if the task needs to crash on the following marker errors: 
-    - the marker is too short (< 10 ms)
-    - the same marker value is sent twice 
-    - something went wrong when sending the marker
-    CrashOnMarkerErrors is set to True when undefined. Note that the task does not crash when connection with the marker device gets lost during the experiment! Always check your data to make sure markers are received correctly. When set to False and GenMarkerFile is set to True, marker errors will be saved in the Markers .tsv file. 
+    - The marker is too short (< 10 ms)
+    - The same marker value is sent twice in a row
+    - Something went wrong when sending the marker
+    CrashOnMarkerErrors is set to True when undefined. Note that the task does not crash when connection with the marker device gets lost during the experiment! Always check your data to make sure markers are received correctly. When CrashOnMarkerErrors is set to False and GenMarkerFile is set to True, marker errors will be saved in the Markers .tsv file. 
 - **DummyMode:** Optional: set to True to use dummy mode and be able to run the task when no marker device is connected (set to False when undefined).
 - **GenMarkerFile:** Optional: set to True to generate a .tsv file that contains information about the markers that were sent during the task and possibly the marker errors that occured (set to True when undefined).
 - **Flash255:** Optional: set to True to send two pulses with value 255 at initialization (set to False when undefined).
