@@ -11,14 +11,15 @@ These download instructions will make the package available per user. When diffe
 
 - Open E-Studio
 - Go to Edit -> Experiment -> Packages and click Add. The Markers package should be listed under Available Packages. Click the Markers package and click Ok and again Ok to add the package to your experiment.
-- The package can now be used by inserting a PackageCall E-Object into your experiment and selecting the desired Routine (see How to use below for further instructions)
 
-![AddMarkerPackage5](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/200c26ab-16cc-4f27-958d-c3e40b1885c0)
+![AddMarkerPackage4](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ddf2d6f6-9395-427a-a5f3-d19c398b57e8)
 
 ## How to use
 The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
 
 After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers package from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
+
+![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/91506b0a-ba07-4ea3-a020-dc444b6ddaac)
 
 ### ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/30215ef0-0ada-4140-aba5-96c71a26be15) Initializing the Marker Device
 An **OpenMarkerDevice** 
