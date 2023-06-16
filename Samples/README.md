@@ -28,9 +28,11 @@ Each trial consists of:
 Short explanation of the blocks:
 - SendMarkerTaskEventProc demonstrates how to use the **SendMarkerTaskEvent** routine to send markers as Task Event. The SendMarkerStim object sets up the marker to be sent at the OnsetTime of the Stimulus object, and reset to 0 at the OffsetTime of the Stimulus object. The marker value is stored in the MarkerValue attribute in the TrialList.
 - SendMarkerProc demonstrates how to use the **SendMarker** routine. The SendMarkerValue sends marker with value stored in the MarkerValue attribute in TrialList2. The marker is sent just before the Stimulus object. The SendMarker0 object resets the marker value to 0 after the Stimulus object.
-- SendMarkerBlockingProc demonstartes how to use the SendMarker routine with a duration. The SendMarkerValueBlocking object sends a marker with a value that is stored in the FixMarkerValue attribute in TrialList3, then waits for 200 ms, and then resets the value to 0. The SendMarkerValueBlocking object is blocking, thus, during the execution of this object, the task just waits. Because the Marker objects do not have a visual component, the Fixation cross is shown during these 200 ms and the Fixation object itself has a duration of 0 ms. 
+- SendMarkerBlockingProc demonstrates how to use the SendMarker routine with a duration. The SendMarkerValueBlocking object sends a marker with a value that is stored in the FixMarkerValue attribute in TrialList3, then waits for 200 ms, and then resets the value to 0. The SendMarkerValueBlocking object is blocking, thus, during the execution of this object, the task just waits. Because the Marker objects do not have a visual component, the Fixation cross is shown during these 200 ms and the Fixation object itself has a duration of 0 ms. 
 
 **Whenever possible, it is advised to use the SendMarkerTaskEvent method.** With this method, markers are sent as closely to the onset of a Stimulus as possible. When the SendMarker object is used in the same way as the SendMarkerProc, there will be a slight delay between the marker and the actual onset of the Stimulus. In this delay, the Stimulus item is prepared. How large this delay is, depends on the Generate PreRun setting of the Stimulus, and the content of the Stimulus object (e.g. when the stimulus is visually taxing, the preparation time will be longer).
+
+![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/c530571e-bc55-46a2-894f-e75cc0779208)
 
 ## Markers Flanker Task
 The Markers_Flanker_Task demonstrates how the markers package can used in a simple Flanker task and points out some considerations when sending markers.
@@ -50,6 +52,8 @@ The following marker related objects were added to the task:
 - **SetRespMarker**: Based on the response on the Stimulus object the marker value that is sent during the Response object is determined and saved in the RespMarker attribute.
 - **SendMarkerResp**: Sets-up the marker that is sent during the Response object. A marker with a value that is set in the RespMarker attribute is sent at the OnsetTime of the Response object and reset to 0 at the OffsetTime of the Response object. Here, resetting the marker value to 0 at the OffsetTime works, because the Response object has a fixed duration of 1500 ms. Also, there is no need to add a wait to make sure the marker signal is 0 for at least a few ms, because the Response object is followed by an object during which no marker is sent.
 
+![FlankTaskStructure](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/c80e2302-7e16-48f7-9349-c81d51d39e74)
+
 ## Multiple Marker Devices
 The Multiple_Marker_Devices task demonstrates how to control marker devices without using the Markers package. This may be necessary when multiple marker devices need to be controlled. Currently, the Marker package can only be used with one marker device.
 
@@ -68,7 +72,7 @@ When the Markers package is not used, the marker devices need to be added as dev
 <img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/435a0106-80f5-4b8a-afb1-1683d733f6b3/AddSerialDevices.png"/>
 
 ##### Finding the COM port
-The COM port numbers can be found be going to the Device Manager. Search for the Device Manager app in the Windows search bar.
+The COM port numbers can be found by going to the Device Manager. Search for the Device Manager app in the Windows search bar.
 <img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/4ec0364c-9954-4828-b92c-741b6a4f9e29/FindDeviceManager.png" width="500"/>
 
 In the Device Manager, the UsbParMarker or Eva devices are listed under Ports (COM & LPT) and are called Arduino Leonardo. 
