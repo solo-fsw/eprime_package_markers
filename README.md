@@ -36,12 +36,7 @@ The OpenMarkerDevice routine uses the following parameters:
 - **GenMarkerFile:** Optional: set to True to generate a .tsv file that contains information about the markers that were sent during the task and possibly the marker errors that occured (set to True when undefined).
 - **Flash255:** Optional: set to True to send two pulses with value 255 at initialization (set to False when undefined).
 
-### Sending Markers
-Markers can be sent with two different routines:
-- **SendMarker**
-- **SendMarkerTaskEvent**
-
-#### ![sendmarker](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2a903d40-9b42-4655-ac9e-e4f8aef2b888) Send marker
+### ![sendmarker](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2a903d40-9b42-4655-ac9e-e4f8aef2b888) Send marker
 The SendMarker routine sends a marker at the timepoint in the experiment where the object is placed. 
 
 The SendMarker routine uses the following parameters:
@@ -50,7 +45,7 @@ The SendMarker routine uses the following parameters:
 - **ObjectDuration:** Optional: ObjectDuration in ms. This is the duration of the SendMarker object. This object is blocking, i.e. the task will pause for the duration of this object. This object does not have any visual component, thus, the Display is showing a previous object with a visual component. The ObjectDuration is not necessarily the same as the duration of the marker! Only when the ResetMarkerValueToZero is set to True, the object duration is the same as the marker duration. This setting is set to 0 (no duration) when undefined.
 - **ResetMarkerValueToZero:** Optional: ResetMarkerValueToZero. This value can be set to True or False. When True, the marker value will automatically reset to 0 after the object duration. Note that the duration must be minimally 5 ms for this setting to take effect. This setting is set to False when undefined.
 
-#### ![sendmarkertaskevent](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ad32afbe-e233-49b3-b9be-573db27bb30c) Send marker as task event
+### ![sendmarkertaskevent](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ad32afbe-e233-49b3-b9be-573db27bb30c) Send marker as task event
 The SendMarkerTaskEvent routine sends one or two markers at certain events. Thus, sending the marker is set up as Task Event and with this routine a marker can be sent at the Onset and/or Offset of an object. A maximum of two task events can be set with this routine. Make sure the routine is placed before the strObject. See below an explanation of the parameters. For example, to send marker with value 1 at the onset of object "Stimulus" and reset to 0 at the offset of object "Stimulus", use the following parameters: c, "Stimulus", "OnsetTime", 1, 0, "OffsetTime", 0, 0.
 
 Note that this routine cannot be used when one or more Task Events are already set-up for the strObject. In this case, the Task Events are executed, but the Marker as specified in the SendMarkerTaskEvent routine is *not* sent.
