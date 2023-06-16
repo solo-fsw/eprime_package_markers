@@ -13,9 +13,7 @@ These download instructions will make the package available per user. When diffe
 - Go to Edit -> Experiment -> Packages and click Add. The Markers package should be listed under Available Packages. Click the Markers package and click Ok and again Ok to add the package to your experiment.
 - The package can now be used by inserting a PackageCall E-Object into your experiment and selecting the desired Routine (see How to use below for further instructions)
 
-![AddMarkerPackage4](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/be186821-b27e-4708-ac5d-9d06cb625bc4)
-
-![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/0f9032fb-7034-4441-a00f-03cc92ce8983)
+![AddMarkerPackage5](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/200c26ab-16cc-4f27-958d-c3e40b1885c0)
 
 ## How to use
 The Markers package is used to send markers to different Leiden Univ FSW marker devices. See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
