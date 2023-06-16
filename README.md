@@ -2,7 +2,7 @@
 E-Prime package for sending markers through UsbParMarker or Eva device.
 
 ## Installation
-These download instructions will make the package available per user. When different users need to use the package, they must download the package separately.
+These download instructions will make the package available per user account. When different users need to use the package, they must download the package separately.
 - Download the Markers package here.
 - Unzip or extract the folder.
 - Place the Markers folder in **C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages**. When the Packages folder does not exist, and you receive the message "Windows can't find C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages", navigate to C:\Users\%USERNAME%\Documents\My Experiments\3.0 and create a new folder called "Packages" here. Then, place the Markers folder in the Packages folder.
@@ -10,7 +10,7 @@ These download instructions will make the package available per user. When diffe
 ![PackageLocation2](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/f4db2d36-97e3-4e34-adf7-15651a47c0e2)
 
 - Open E-Studio
-- Go to Edit -> Experiment -> Packages and click Add. The Markers package should be listed under Available Packages. Click the Markers package and click Ok and again Ok to add the package to your experiment.
+- Go to **Edit -> Experiment -> Packages** and click **Add**. The Markers package should be listed under **Available Packages**. Click the **Markers** package and click **Ok** and again **Ok** to add the package to your experiment.
 
 ![AddMarkerPackage4](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ddf2d6f6-9395-427a-a5f3-d19c398b57e8)
 
