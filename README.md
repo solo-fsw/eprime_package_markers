@@ -5,7 +5,7 @@ E-Prime package for sending markers through UsbParMarker or Eva device.
 These download instructions will make the package available per user. When different users need to use the package, they must download the package separately.
 - Download the Markers package here.
 - Unzip/Extract the folder.
-- Place the Markers folder here: C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages. When the Packages folder does not exist, and you receive the message "Windows can't find C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages", navigate to C:\Users\%USERNAME%\Documents\My Experiments\3.0 and create a new folder called "Packages" here. Then, place the Markers folder in the Packages folder.
+- Place the Markers folder in **C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages**. When the Packages folder does not exist, and you receive the message "Windows can't find C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages", navigate to C:\Users\%USERNAME%\Documents\My Experiments\3.0 and create a new folder called "Packages" here. Then, place the Markers folder in the Packages folder.
 
 ![PackageLocation2](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/f4db2d36-97e3-4e34-adf7-15651a47c0e2)
 
@@ -16,7 +16,7 @@ These download instructions will make the package available per user. When diffe
 ![AddMarkerPackage5](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/200c26ab-16cc-4f27-958d-c3e40b1885c0)
 
 ## How to use
-The Markers package is used to send markers to different Leiden Univ FSW marker devices. See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
+The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
 
 After properly downloading the package and adding the package to the experiment (as mentioned in Installation), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers package from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
