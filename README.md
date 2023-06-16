@@ -1,4 +1,4 @@
-# E-Prime Markers package
+# ![markers](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/a3594027-f20a-43e5-8995-39d6e4ed78dd) E-Prime Markers package
 E-Prime package for sending markers through UsbParMarker or Eva device.
 
 ## Installation
@@ -20,8 +20,8 @@ The Markers package is used to send markers to different Leiden Univ FSW marker 
 
 After properly downloading the package and adding the package to the experiment (as mentioned in Installation), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers package from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
-### Initializing the Marker Device
-An **OpenMarkerDevice** ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/30215ef0-0ada-4140-aba5-96c71a26be15)
+### ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/30215ef0-0ada-4140-aba5-96c71a26be15) Initializing the Marker Device
+An **OpenMarkerDevice** 
 routine should be added to the start of the experiment. This routine initializes the marker device and allows the user to set different settings for the device. This routine should be placed at the start of the experiment and must be used before a SendMarker routine can be used.
 
 The OpenMarkerDevice routine uses the following parameters:
@@ -38,10 +38,10 @@ The OpenMarkerDevice routine uses the following parameters:
 
 ### Sending Markers
 Markers can be sent with two different routines:
-- **SendMarker**
-- **SendMarkerTaskEvent**
+- ![sendmarker](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2a903d40-9b42-4655-ac9e-e4f8aef2b888) **SendMarker**
+- ![sendmarkertaskevent](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ad32afbe-e233-49b3-b9be-573db27bb30c) **SendMarkerTaskEvent**
 
-#### SendMarker routine
+#### ![sendmarker](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2a903d40-9b42-4655-ac9e-e4f8aef2b888) SendMarker routine
 The SendMarker routine sends a marker at the timepoint in the experiment where the object is placed. 
 
 The SendMarker routine uses the following parameters:
@@ -50,7 +50,7 @@ The SendMarker routine uses the following parameters:
 - **ObjectDuration:** Optional: ObjectDuration in ms. This is the duration of the SendMarker object. This object is blocking, i.e. the task will pause for the duration of this object. This object does not have any visual component, thus, the Display is showing a previous object with a visual component. The ObjectDuration is not necessarily the same as the duration of the marker! Only when the ResetMarkerValueToZero is set to True, the object duration is the same as the marker duration. This setting is set to 0 (no duration) when undefined.
 - **ResetMarkerValueToZero:** Optional: ResetMarkerValueToZero. This value can be set to True or False. When True, the marker value will automatically reset to 0 after the object duration. Note that the duration must be minimally 5 ms for this setting to take effect. This setting is set to False when undefined.
 
-#### SendMarkerTaskEvent routine
+#### ![sendmarkertaskevent](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ad32afbe-e233-49b3-b9be-573db27bb30c) SendMarkerTaskEvent routine
 The SendMarkerTaskEvent routine sends one or two markers at certain events. Thus, sending the marker is set up as Task Event and with this routine a marker can be sent at the Onset and/or Offset of an object. A maximum of two task events can be set with this routine. Make sure the routine is placed before the strObject. See below an explanation of the parameters. For example, to send marker with value 1 at the onset of object "Stimulus" and reset to 0 at the offset of object "Stimulus", use the following parameters: c, "Stimulus", "OnsetTime", 1, 0, "OffsetTime", 0, 0.
 
 Note that this routine cannot be used when one or more Task Events are already set-up for the strObject. In this case, the Task Events are executed, but the Marker as specified in the SendMarkerTaskEvent routine is *not* sent.
@@ -65,10 +65,10 @@ The SendMarkerTaskEvent routine uses the following parameters:
 - **MarkerValue2:** Optional: The value of the second marker. The value must be an integer between 0 and 255.
 - **MarkerTaskEventDelay2:** Optional: The task event delay of the second marker in ms. For example, when the task event is set to "OffsetTime" of the "Stimulus" object and the delay to 10, the marker will be sent 10 ms after Stimulus.OffsetTime. Default value is 0 (no delay). Note: use this setting with caution and when using the delay, make sure the marker is not overwritten by other markers sent after the object.
 
-### Closing the Marker Device
+### ![closemarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/412c53bb-5fcf-431a-891e-6d3d985b77db) Closing the Marker Device
 To properly close the device and save the Marker file (if applicable) it is necessary to add a **CloseMarkerDevice** at the end of the experiment. No parameter specification is required (leave c at default c).
 
-### Change UsbParMarker Leds
+### ![usbparmarkerleds](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/51c3f86d-1755-431e-a96a-2ea4f4130c9b) Change UsbParMarker Leds
 For the UsbParMarker it is possible to switch the Leds off (and back on). For this, the **UsbParMarkerLeds** routine can be used. Note that this routine can only be used with the UsbParMarker, not with the Eva.
 
 The UsbParMarkerLeds routine uses the following parameters:
