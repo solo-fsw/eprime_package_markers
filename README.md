@@ -21,7 +21,8 @@ The Markers package is used to send markers to different Leiden Univ FSW marker 
 After properly downloading the package and adding the package to the experiment (as mentioned in Installation), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers package from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
 ### Initializing the Marker Device
-An **OpenMarkerDevice** routine should be added to the start of the experiment. This routine initializes the marker device and allows the user to set different settings for the device. This routine should be placed at the start of the experiment and must be used before a SendMarker routine can be used.
+An **OpenMarkerDevice** ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/30215ef0-0ada-4140-aba5-96c71a26be15)
+routine should be added to the start of the experiment. This routine initializes the marker device and allows the user to set different settings for the device. This routine should be placed at the start of the experiment and must be used before a SendMarker routine can be used.
 
 The OpenMarkerDevice routine uses the following parameters:
 - **c:** The experiment context allows the user to add variables to the experiment. The routines in the PackageFile may optionally use the experiment context to retrieve the current values of attributes stored in the context. The context is typically the first parameter of every PackageFile routine. Leave at default c.
