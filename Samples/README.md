@@ -18,7 +18,12 @@ An OpenMarkerDevice object was added to the start of the experiment to open the 
 
 A CloseMarkerDevice object was added to the end of the experiment. No settings are required in the CloseMarkerDevice object.
 
-The task consists of three blocks that demonstrate different ways of sending markers. The trials within each block are all the same, except for the way the markers are sent. Each trial consists of a Fixation cross for 500 ms, a Stimulus that lasts until a key was pressed, a ShowResp object that shows which button was pressed and which marker was sent with a duration of 1000 ms. The checkExit inlines at the end of the trials check whether the q was pressed and the task needs to be terminated. 
+The task consists of three blocks that demonstrate different ways of sending markers. The trials within each block are all the same, except for the way the markers are sent. 
+Each trial consists of:
+- A Fixation cross for 500 ms
+- A Stimulus that lasts until a key was pressed
+- A ShowResp object that shows which button was pressed and which marker was sent with a duration of 1000 ms
+- A checkExit inline at the end of the trials checks whether the q was pressed and the task needs to be terminated
 
 Short explanation of the blocks:
 - SendMarkerTaskEventProc demonstrates how to use the SendMarkerTaskEvent routine to send markers as Task Event. The SendMarkerStim object sets up the marker to be sent at the OnsetTime of the Stimulus object, and reset to 0 at the OffsetTime of the Stimulus object. The marker value is stored in the MarkerValue attribute in the TrialList.
