@@ -55,13 +55,13 @@ Note that when possible, it is advised to use the Markers package. This is becau
 - The Markers package checks the markers and either crashes when a marker error occurs, or saves the error message in the Marker file.
 All benefits mentioned above are not available when controlling one or more marker devices without the package. The method described in the Multiple_Marker_Devices task is a very simple and crude way to control a marker device.
 
-## How to create a task with multiple marker devices
+### How to create a task with multiple marker devices
 
-### Add serial devices:
+#### Add serial devices:
 When the Markers package is not used, the marker devices need to be added as devices to the E-Prime task. This is done by going to Edit --> Experiment --> Devices. In the Multiple_Marker_Devices task, two Serial devices called UsbParMarker1 and UsbParMarker2 are visible. These devices were added by clicking on Add and then Serial. UsbParMarker and Eva are both Serial devices. Note that in the current example UsbParMarker devices were used, but the same applies for Eva. Double-clicking on a serial device opens its settings. Here, a Name for the device can be chosen. The COM Port should be specified, which is the port to which the marker device is connected to. This port can be found by going to the Device Manager. The rest of the settings should be: Bits per second = 115200, Data Bits = 8, Partiy = None and Stop Bits = 1. These settings are the same for all UsbParMarker and Eva devices. When using two marker devices, make sure both devices have the correct settings and the correct port number.
 
-### Send marker in InLine
+#### Send marker in InLine:
 The InitMarkerDevices InLine provides an example on how to send markers to the different marker devices. This is done with the WriteByte method. In the sample marker value 255 (all bits high) is sent to both devices for 1 second, then resets to 0.
 
-### Send marker as Task Event
+#### Send marker as Task Event:
 Another method to send a marker is through Task Events. A Task Event allows the execution of a certain Task (sending a marker) at a certain event (the Onset of a Stimulus). Thus, with Task Events, a marker value can be sent at the Onset of an object and reset to 0 at the Offset of an object. The Task Event is set-up by going to an Object, clicking on the Properties, and going to the Task Event tab. Task Events can be added by clicking the Add button. Usually, only the OnsetTime and OffsetTime of an object are relevant when sending markers. When a Task Event is added, click on the ... next to Name (Choose a Task). Here, choose the device to which a marker needs to be sent. Under Action, select WriteByte. Some Parameters appear at the rights side. Keep Source at (custom). Fill in the marker value in Custom (or refer to an attribute where the marker values are stored). Select Integer at Data Type. To use the Task Event, keep Enabled to Yes. Usually a marker value is sent at the Onset and a 0 at the Offset. Alternatively, if for example only a marker pulse of 10 ms needs to be sent, two Task Events referencing the OnsetTime can be created. One of the Task Events sends the marker value at the OnsetTime. The other Task Event sends value 0 10 ms after the OnsetTime. This is achieved by filling in a Delay (in ms).
