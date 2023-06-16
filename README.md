@@ -73,7 +73,7 @@ The UsbParMarkerLeds routine uses the following parameters:
 ### Object Placement and Timing
 It is important to note that the Markers routines do not have a visual component. Thus, during the execution of the Markers objects, what was already presented on the screen, will stay on the screen.
 
-To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. This routine enables the marker to be sent at onset and/or offset of an object. 
+To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. With this routine, a marker can be sent at the on- or offset of an object.
 
 ### Using Multiple Marker Devices
 It is not possible to use the Marker package with multiple marker devices. Only one marker device can be used with this package.
