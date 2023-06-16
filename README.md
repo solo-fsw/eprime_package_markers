@@ -6,9 +6,14 @@ These download instructions will make the package available per user. When diffe
 - Download the Markers package here.
 - Unzip/Extract the folder.
 - Place the Markers folder here: C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages. When the Packages folder does not exist, and you receive the message "Windows can't find C:\Users\%USERNAME%\Documents\My Experiments\3.0\Packages", navigate to C:\Users\%USERNAME%\Documents\My Experiments\3.0 and create a new folder called "Packages" here. Then, place the Markers folder in the Packages folder.
+
+![PackageLocation](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/965678bf-dced-4b17-a530-19ec5448f8c4)
+
 - Open E-Studio
 - Go to Edit -> Experiment -> Packages and click Add. The Markers package should be listed under Available Packages. Click the Markers package and click Ok and again Ok to add the package to your experiment.
 - The package can now be used by inserting a PackageCall E-Object into your experiment and selecting the desired Routine (see How to use below for further instructions)
+
+![AddMarkerPackage3](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/43c7a8c3-762d-4553-bbca-b3bf35330a3f)
 
 ## How to use
 The Markers package is used to send markers to different Leiden Univ FSW marker devices. See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
