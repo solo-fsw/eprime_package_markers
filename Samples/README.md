@@ -69,14 +69,16 @@ All benefits mentioned above are not available when controlling one or more mark
 #### Add serial devices:
 When the Markers package is not used, the marker devices need to be added as devices to the E-Prime task. This is done by going to **Edit** --> **Experiment** --> **Devices**. In the Multiple_Marker_Devices task, two Serial devices called UsbParMarker1 and UsbParMarker2 are visible. These devices were added by clicking on **Add** and then **Serial**. UsbParMarker and Eva are both Serial devices. Note that in the current example UsbParMarker devices were used, but the same applies for Eva. Double-clicking on a serial device opens its settings. Here, a **Name** for the device can be chosen. The **COM Port** should be specified, which is the port to which the marker device is connected to. This port can be found by going to the **Device Manager** (see [below](#finding-the-com-port)). The rest of the settings should be: **Bits per second = 115200**, **Data Bits = 8**, **Partiy = None** and **Stop Bits = 1**. These settings are the same for all UsbParMarker and Eva devices. When using two marker devices, make sure both devices have the correct settings and the correct port number.
 
-<img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/435a0106-80f5-4b8a-afb1-1683d733f6b3/AddSerialDevices.png"/>
+![AddSerialDevices](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/38bdbf16-ccca-4195-a92b-5bdec44b5e81)
 
 ##### Finding the COM port
 The COM port numbers can be found by going to the Device Manager. Search for the Device Manager app in the Windows search bar.
-<img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/4ec0364c-9954-4828-b92c-741b6a4f9e29/FindDeviceManager.png" width="500"/>
+
+<img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/3f769867-d4dd-4cf9-aa4e-1f001b5f04e4/FindDeviceManager.png" width="500"/>
 
 In the Device Manager, the UsbParMarker or Eva devices are listed under Ports (COM & LPT) and are called Arduino Leonardo or USB Serial Device.
-<img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/3e05b221-cb49-46cc-9e77-8a43fb65a883/DeviceManagerComPorts.png" width="500"/>
+
+<img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/28c1562b-02d6-49ef-a946-005963722460/DeviceManagerComPorts.png" width="500"/>
 
 #### Send marker in InLine:
 The InitMarkerDevices InLine provides an example on how to send markers to the different marker devices. This is done with the WriteByte method. In the Multiple_Marker_Devices sample task marker value 255 (all bits high) is sent to both devices for 100 ms and then reset to 0.
