@@ -32,7 +32,7 @@ Short explanation of the blocks:
 
 **Whenever possible, it is advised to use the SendMarkerTaskEvent method.** With this method, markers are sent as closely to the onset of an event as possible. When the SendMarker object is used in the same way as the SendMarkerProc, there will be a slight delay between the marker and the actual onset of the object of interest. In this delay, the object is prepared. How large this delay is, depends on the Generate PreRun setting of the object, and the content of the object (e.g. when a stimulus is visually taxing, the preparation time will be longer).
 
-![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/b2d05232-2467-47f8-9165-b1f51193231a)
+![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/00e303ec-78bf-4e9b-8447-9311a62c6363)
 
 ## Markers Flanker Task
 The Markers_Flanker_Task demonstrates how the markers package can be used in a simple Flanker task and points out some considerations when sending markers.
@@ -52,7 +52,7 @@ The following marker related objects were added to the task:
 - **SetRespMarker**: Based on the response on the Stimulus object the marker value that is sent during the Response object is determined and saved in the RespMarker attribute.
 - **SendMarkerTaskEventResp**: Sets-up the marker that is sent during the Response object. A marker with a value that is set in the RespMarker attribute is sent at the OnsetTime of the Response object and resets to 0 at the OffsetTime of the Response object. Here, resetting the marker value to 0 at the OffsetTime works, because the Response object has a fixed duration of 1500 ms. Also, there is no need to add a wait to make sure the marker signal is 0 for at least 10 ms, because the Response object is followed by an object during which no marker is sent.
 
-![FlankTaskStructure](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/c80e2302-7e16-48f7-9349-c81d51d39e74)
+![FlankTaskStructure](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/009be306-ccc5-4029-9406-e0951fa0b454)
 
 ## Multiple Marker Devices
 The Multiple_Marker_Devices task demonstrates how to control marker devices without using the Markers package. This may be necessary when multiple marker devices need to be controlled. Currently, the Marker package can only be used with one marker device.
@@ -81,9 +81,9 @@ In the Device Manager, the UsbParMarker or Eva devices are listed under Ports (C
 #### Send marker in InLine:
 The InitMarkerDevices InLine provides an example on how to send markers to the different marker devices. This is done with the WriteByte method. In the Multiple_Marker_Devices sample task marker value 255 (all bits high) is sent to both devices for 100 ms and then reset to 0.
 
-![SendMarkerMultipleDevices](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/0af9507f-9f53-45f6-b5ef-64ff91da3a09)
+![SendMarkerMultipleDevices](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/5c5b2cdc-b9d9-4abb-b5a8-78a3ec4f897b)
 
 #### Send marker as Task Event:
 Another method to send a marker is through Task Events. A Task Event allows the execution of a certain Task (sending a marker) at a certain event (the Onset of a Stimulus). Thus, with Task Events, a marker value can be sent at the Onset of an object and reset to 0 at the Offset of an object. The Task Event is set-up by going to an Object, clicking on the **Properties**, and going to the **Task Event** tab. Task Events can be added by clicking the **Add** button. Usually, only the OnsetTime and OffsetTime of an object are relevant when sending markers. When a Task Event is added, click on the ... next to **Name (Choose a Task)**. Here, choose the device to which a marker needs to be sent. Under **Action**, select **WriteByte**. Some Parameters appear at the rights side. Keep **Source** at **(custom)**. Fill in the marker value in **Custom** (or refer to an attribute where the marker values are stored). Select **Integer** at **Data Type**. To use the Task Event, keep **Enabled** to **Yes**. Usually a marker value is sent at the Onset and reset to 0 at the Offset. Alternatively, if for example only a marker pulse of 10 ms needs to be sent, two Task Events referencing the OnsetTime can be created. One of the Task Events sends the marker value at the OnsetTime. The other Task Event sends value 0 at 10 ms after the OnsetTime. This is achieved by filling in a **Delay** (in ms) of **10**.
 
-![AddTaskEvents](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/6dcce584-2454-4805-a698-92e9060951bf)
+![AddTaskEvents](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/c85e0efb-3501-4823-b106-01990c84fbec)
