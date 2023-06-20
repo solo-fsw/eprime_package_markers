@@ -87,7 +87,7 @@ It is important to note that the Markers routines do not have a visual component
 To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. With this routine, a marker can be sent at the on- or offset of an object.
 
 ### Using Multiple Marker Devices
-It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the Samples folder.
+It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder]([url](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples)).
 
 ## Timing Test
 Timing of the E-Prime markers package was tested by comparing the onset and offset of pulses sent with the markers package to the UsbParMarker, with the onset and offset of pulses sent to the LPT port. Both signals were recorded with BIOPAC AcqKnowledge (LPT with Digital input, UsbParMarker in Analog channel 1). 
@@ -97,7 +97,7 @@ Breaking it down, pulses were sent in three different ways, 1. first to the UsbP
 2.	When sending a pulse first to the LPT port and then to the UsbParMarker, an average difference of 108.3 us (max 150 us) was found when comparing the onset of the pulses and an average difference of 203.3 us (max 350 us) was found when comparing the offset of the pulses (tested with 30 pulses).
 3.	When sending pulses as task events, an average difference of 198.3 us (max 250 us) was found when comparing the onset of the pulses and an average difference of 101.7 us (max 150 us) was found when comparing the offset of the pulses (tested with 30 pulses).
 
-The timing data can be found in the TimingTest folder.
+The timing data can be found in the [TimingTest folder]([url](https://github.com/solo-fsw/eprime_package_markers/tree/main/TimingTest)https://github.com/solo-fsw/eprime_package_markers/tree/main/TimingTest).
 
 
 
