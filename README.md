@@ -17,7 +17,7 @@ These download instructions will make the package available per user account. Wh
 ## How to use
 The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
 
-After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers package from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
+After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
 ![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/91506b0a-ba07-4ea3-a020-dc444b6ddaac)
 
@@ -87,7 +87,7 @@ It is important to note that the Markers routines do not have a visual component
 To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. With this routine, a marker can be sent at the on- or offset of an object.
 
 ### Using Multiple Marker Devices
-It is not possible to use the Marker package with multiple marker devices. Only one marker device can be used with this package.
+It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the Samples folder.
 
 ## Timing Test
 Timing of the E-Prime markers package was tested by comparing the onset and offset of pulses sent with the markers package to the UsbParMarker, with the onset and offset of pulses sent to the LPT port. Both signals were recorded with BIOPAC AcqKnowledge (LPT with Digital input, UsbParMarker in Analog channel 1). 
