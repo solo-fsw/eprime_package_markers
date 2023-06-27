@@ -1,4 +1,6 @@
 # Markers package sample tasks
+The sample tasks can be downloaded [here]([url](https://downgit.github.io/#/home?url=https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples)) (download starts immediately).
+
 The following sample tasks demonstrate how the Markers package is used:
 - Markers_Sample_Task
 - Markers_Flanker_Task
