@@ -15,6 +15,8 @@ These download instructions will make the package available per user account. Wh
 ![AddMarkerPackage4](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/e3cac624-e716-4346-8eeb-7794ed64b8bb)
 
 ## How to use
+Sample tasks with instructions can be found in the [Samples folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples). Below, a general description of how to use the Markers package and an explanation of its routines is given. 
+
 After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
 ![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2d50a76d-eb48-4504-aa5e-a6717e33f444)
