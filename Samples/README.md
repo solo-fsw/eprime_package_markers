@@ -32,7 +32,7 @@ Short explanation of the blocks:
 
 **Whenever possible, it is advised to use the SendMarkerTaskEvent method.** With this method, markers are sent as closely to the onset of an event as possible. When the SendMarker object is used in the same way as the SendMarkerProc, there will be a slight delay between the marker and the actual onset of the object of interest. In this delay, the object is prepared. How large this delay is, depends on the Generate PreRun setting of the object, and the content of the object (e.g. when a stimulus is visually taxing, the preparation time will be longer).
 
-![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/00e303ec-78bf-4e9b-8447-9311a62c6363)
+![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/d2a8fc5b-14ca-4509-b688-06bf612d3738)
 
 ## Markers Flanker Task
 The Markers_Flanker_Task demonstrates how the markers package can be used in a simple Flanker task and points out some considerations when sending markers.
@@ -52,7 +52,7 @@ The following marker related objects were added to the task:
 - **SetRespMarker**: Based on the response on the Stimulus object the marker value that is sent during the Response object is determined and saved in the RespMarker attribute.
 - **SendMarkerTaskEventResp**: Sets-up the marker that is sent during the Response object. A marker with a value that is set in the RespMarker attribute is sent at the OnsetTime of the Response object and resets to 0 at the OffsetTime of the Response object. Here, resetting the marker value to 0 at the OffsetTime works, because the Response object has a fixed duration of 1500 ms. Also, there is no need to add a wait to make sure the marker signal is 0 for at least 10 ms, because the Response object is followed by an object during which no marker is sent.
 
-![FlankTaskStructure](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/009be306-ccc5-4029-9406-e0951fa0b454)
+![FlankTaskStructure](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/dc731d61-8c00-4687-b1a5-52ea131e6c22)
 
 ## Multiple Marker Devices
 The Multiple_Marker_Devices task demonstrates how to control marker devices without using the Markers package. This may be necessary when multiple marker devices need to be controlled. Currently, the Marker package can only be used with one marker device.
