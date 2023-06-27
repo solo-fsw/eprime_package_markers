@@ -1,5 +1,5 @@
 # ![markers](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/8281b582-73c0-4eee-9e6e-049eadd62d78) E-Prime Markers package 
-E-Prime package for sending markers through UsbParMarker or Eva device.
+The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
 
 ## Installation
 These download instructions will make the package available per user account. When different users need to use the package, they must download the package separately.
@@ -15,8 +15,6 @@ These download instructions will make the package available per user account. Wh
 ![AddMarkerPackage4](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/e3cac624-e716-4346-8eeb-7794ed64b8bb)
 
 ## How to use
-The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
-
 After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
 ![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2d50a76d-eb48-4504-aa5e-a6717e33f444)
@@ -91,6 +89,11 @@ To obtain the most accurate timing of a marker (i.e. the marker is sent as close
 
 ### Using Multiple Marker Devices
 It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder]([url](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples)).
+
+## Limitations
+1. The Markers package cannot be used when multiple marker devices need to be controlled or when multiple marker devices are connected to the PC. 
+
+2. The SendMarkerTaskEvent routine cannot be used when the strObject already has one or more Task Events (Task Events are set-up in the Task Events tab in the properties of the strObject).
 
 ## Timing Test
 Timing of the E-Prime markers package was tested by comparing the onset and offset of pulses sent with the markers package to the UsbParMarker, with the onset and offset of pulses sent to the LPT port. Both signals were recorded with BIOPAC AcqKnowledge (LPT with Digital input, UsbParMarker in Analog channel 1). 
