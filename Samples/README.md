@@ -74,20 +74,20 @@ When the Markers package is not used, the marker devices need to be added as dev
 ![AddSerialDevices](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/38bdbf16-ccca-4195-a92b-5bdec44b5e81)
 
 ##### Finding the COM port
-The COM port numbers can be found by going to the Device Manager. Search for the Device Manager app in the Windows search bar.
+The COM port numbers can be found by going to the **Device Manager**. Search for the Device Manager app in the Windows search bar.
 
 <img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/3f769867-d4dd-4cf9-aa4e-1f001b5f04e4/FindDeviceManager.png" width="500"/>
 
-In the Device Manager, the UsbParMarker or Eva devices are listed under Ports (COM & LPT) and are called Arduino Leonardo or USB Serial Device.
+In the Device Manager, the UsbParMarker or Eva devices are listed under **Ports (COM & LPT)** and are called **Arduino Leonardo** or **USB Serial Device**.
 
 <img src="https://github.com/solo-fsw/eprime_package_markers/assets/56065641/28c1562b-02d6-49ef-a946-005963722460/DeviceManagerComPorts.png" width="500"/>
 
 #### Send marker in InLine:
-The InitMarkerDevices InLine provides an example on how to send markers to the different marker devices. This is done with the WriteByte method. In the Multiple_Marker_Devices sample task marker value 255 (all bits high) is sent to both devices for 100 ms and then reset to 0.
+The InitMarkerDevices InLine provides an example on how to send markers to the different marker devices. This is done with the **WriteByte** method. In the Multiple_Marker_Devices sample task marker value 255 (all bits high) is sent to both devices for 100 ms and then reset to 0.
 
 ![SendMarkerMultipleDevices](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/5c5b2cdc-b9d9-4abb-b5a8-78a3ec4f897b)
 
 #### Send marker as Task Event:
-Another method to send a marker is through Task Events. A Task Event allows the execution of a certain Task (sending a marker) at a certain event (the Onset of a Stimulus). Thus, with Task Events, a marker value can be sent at the Onset of an object and reset to 0 at the Offset of an object. The Task Event is set-up by going to an Object, clicking on the **Properties**, and going to the **Task Event** tab. Task Events can be added by clicking the **Add** button. Usually, only the OnsetTime and OffsetTime of an object are relevant when sending markers. When a Task Event is added, click on the ... next to **Name (Choose a Task)**. Here, choose the device to which a marker needs to be sent. Under **Action**, select **WriteByte**. Some Parameters appear at the rights side. Keep **Source** at **(custom)**. Fill in the marker value in **Custom** (or refer to an attribute where the marker values are stored). Select **Integer** at **Data Type**. To use the Task Event, keep **Enabled** to **Yes**. Usually a marker value is sent at the Onset and reset to 0 at the Offset. Alternatively, if for example only a marker pulse of 10 ms needs to be sent, two Task Events referencing the OnsetTime can be created. One of the Task Events sends the marker value at the OnsetTime. The other Task Event sends value 0 at 10 ms after the OnsetTime. This is achieved by filling in a **Delay** (in ms) of **10**.
+Another method to send a marker is through **Task Events**. A Task Event allows the execution of a certain Task (e.g. sending a marker) at a certain event (e.g. the Onset of a Stimulus). Thus, with Task Events, a marker value can be sent at the Onset of an object and reset to 0 at the Offset of an object. The Task Event is set-up by going to an Object, clicking on the **Properties**, and going to the **Task Event** tab. Task Events can be added by clicking the **Add** button. Usually, only the OnsetTime and OffsetTime of an object are relevant when sending markers. When a Task Event is added, click on the **...** next to **Name (Choose a Task)**. Here, choose the device to which a marker needs to be sent. Under **Action**, select **WriteByte**. Some Parameters appear at the rights side. Keep **Source** at **(custom)**. Fill in the marker value in **Custom** (or refer to an attribute where the marker values are stored). Select **Integer** at **Data Type**. To use the Task Event, keep **Enabled** to **Yes**. Usually a marker value is sent at the Onset and reset to 0 at the Offset. Alternatively, if for example only a marker pulse of 10 ms needs to be sent at the onset of an object, two Task Events referencing the OnsetTime can be created. One of the Task Events sends the marker value at the OnsetTime. The other Task Event sends value 0 at 10 ms after the OnsetTime. This is achieved by filling in a **Delay** (in ms) of **10**.
 
 ![AddTaskEvents](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/c85e0efb-3501-4823-b106-01990c84fbec)
