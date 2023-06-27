@@ -17,7 +17,7 @@ These download instructions will make the package available per user account. Wh
 ## How to use
 Sample tasks with instructions can be found in the [Samples folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples). Below, a general description of how to use the Markers package and an explanation of its routines is given. 
 
-After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using PackageCall objects. Add a PackageCall object (found under E-Objects) to your experiment. Double-click on the PackageCall object to open its properties. Select Markers from the Package drop-down menu and select the desired routine from the Routine drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
+After properly downloading the package and adding the package to the experiment (as mentioned in [Installation](#installation)), the marker devices can be controlled by using **PackageCall** objects. Add a PackageCall object (found under **E-Objects**) to your experiment. Double-click on the PackageCall object to open its properties. Select **Markers** from the **Package** drop-down menu and select the desired routine from the **Routine** drop-down menu. A description of the routine is now visible, including an explanation of all its parameters.
 
 ![AddPackageRoutine](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/2d50a76d-eb48-4504-aa5e-a6717e33f444)
 
@@ -41,7 +41,7 @@ The OpenMarkerDevice routine uses the following parameters:
 ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ae20f769-ab0d-4d15-b4f2-028248a48521)
 
 ### ![sendmarker-icon](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/d9454350-5cb4-494f-8374-876d7f92dfe4) Sending a marker 
-The SendMarker routine sends a marker at the timepoint in the experiment where the object is placed. 
+The **SendMarker** routine sends a marker at the timepoint in the experiment where the object is placed. 
 
 The SendMarker routine uses the following parameters:
 - **c:** The experiment context allows the user to add variables to the experiment. The routines in the PackageFile may optionally use the experiment context to retrieve the current values of attributes stored in the context. The context is typically the first parameter of every PackageFile routine. Leave at default c.
@@ -53,7 +53,7 @@ The SendMarker routine uses the following parameters:
 
 ### ![sendmarkertaskevent-icon](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/8945c3a5-30d8-41af-87b7-d0292bd0e4a7) Sending a marker as task event
 
-The SendMarkerTaskEvent routine sends one or two markers at certain events. Thus, sending the marker is set up as Task Event and with this routine a marker can be sent at the Onset and/or Offset of an object. A maximum of two task events can be set with this routine. Make sure the routine is placed before the strObject. See below an explanation of the parameters. For example, to send marker with value 1 at the onset of object "Stimulus" and reset to 0 at the offset of object "Stimulus", use the following parameters: c, "Stimulus", "OnsetTime", 1, 0, "OffsetTime", 0, 0.
+The **SendMarkerTaskEvent** routine sends one or two markers at certain events. Thus, sending the marker is set up as **Task Event** and with this routine a marker can be sent at the Onset and/or Offset of an object. A maximum of two task events can be set with this routine. Make sure the routine is placed before the strObject. See below an explanation of the parameters. For example, to send marker with value 1 at the onset of object "Stimulus" and reset to 0 at the offset of object "Stimulus", use the following parameters: c, "Stimulus", "OnsetTime", 1, 0, "OffsetTime", 0, 0.
 
 Note that this routine cannot be used when one or more Task Events are already set-up for the strObject. In this case, the Task Events are executed, but the Marker as specified in the SendMarkerTaskEvent routine is *not* sent.
 
@@ -90,7 +90,7 @@ It is important to note that the Markers routines do not have a visual component
 To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. With this routine, a marker can be sent at the on- or offset of an object.
 
 ### Using Multiple Marker Devices
-It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder]([url](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples)).
+It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples).
 
 ## Limitations
 1. The Markers package cannot be used when multiple marker devices need to be controlled or when multiple marker devices are connected to the PC. 
@@ -105,7 +105,7 @@ Breaking it down, pulses were sent in three different ways, 1. first to the UsbP
 2.	When sending a pulse first to the LPT port and then to the UsbParMarker, an average difference of 108.3 us (max 150 us) was found when comparing the onset of the pulses and an average difference of 203.3 us (max 350 us) was found when comparing the offset of the pulses (tested with 30 pulses).
 3.	When sending pulses as task events, an average difference of 198.3 us (max 250 us) was found when comparing the onset of the pulses and an average difference of 101.7 us (max 150 us) was found when comparing the offset of the pulses (tested with 30 pulses).
 
-The timing data can be found in the [TimingTest folder]([url](https://github.com/solo-fsw/eprime_package_markers/tree/main/TimingTest)https://github.com/solo-fsw/eprime_package_markers/tree/main/TimingTest).
+The timing data can be found in the [TimingTest folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/TimingTest).
 
 
 
