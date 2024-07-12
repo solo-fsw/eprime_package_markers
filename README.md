@@ -97,6 +97,8 @@ It is not possible to use the Marker package with multiple marker devices, only 
 
 2. The SendMarkerTaskEvent routine cannot be used when the strObject already has one or more Task Events (Task Events are set-up in the Task Events tab in the properties of the strObject).
 
+3. When the OffsetTime is used in the SendMarkerTaskEvent routine, the PreRelease of the strObject should be set to 0.
+
 ## Timing Test
 Timing of the E-Prime markers package was tested by comparing the onset and offset of pulses sent with the markers package to the UsbParMarker, with the onset and offset of pulses sent to the LPT port. Both signals were recorded with BIOPAC AcqKnowledge (LPT with Digital input, UsbParMarker in Analog channel 1). 
 A total of 90 pulses were sent to both devices. On average, a delay of 183.3 us was found when comparing both onsets and offsets, with a maximum delay of 550 us. 
