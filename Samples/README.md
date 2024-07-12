@@ -36,6 +36,9 @@ Short explanation of the blocks:
 
 ![SampleTaskStruct](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/d2a8fc5b-14ca-4509-b688-06bf612d3738)
 
+## Markers Sample Task No PackageCall Objects
+The Markers_Sample_Task_No_PackageCall_Objects is identical to the Markers_Sample_Task, but instead of packagecall objects, it has inline scripts in which the packagecalls are done. It serves as an example of how to use the package with inlines only. For all information regarding this sample task, see the Markers_Sample_Task info above.
+
 ## Markers Flanker Task
 The Markers_Flanker_Task demonstrates how the markers package can be used in a simple Flanker task and points out some considerations when sending markers.
 
