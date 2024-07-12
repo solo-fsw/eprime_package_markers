@@ -11,6 +11,8 @@ These download instructions will make the package available per user account. Wh
 
 - Alternatively, place the package wherever you want, and specify the location to the package in your E-Prime task, by going to Tools -> Options -> Packages and specifying a new search folder for package files.
 
+![PackageLocation](https://github.com/user-attachments/assets/514209a7-a59e-4e05-b15b-e336b2c4e895)
+
 ## Adding the package to your experiment
 - Open E-Studio
 - Go to **Edit -> Experiment -> Packages** and click **Add**. The Markers package should be listed under **Available Packages**. Click the **Markers** package and click **Ok** and again **Ok** to add the package to your experiment.
