@@ -9,6 +9,9 @@ These download instructions will make the package available per user account. Wh
 
 ![PackageLocation2](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/5b12e2b3-4e33-4502-b52a-572263090731)
 
+- Alternatively, place the package wherever you want, and specify the location to the package in your E-Prime task, by going to Tools -> Options -> Packages and specifying a new search folder for package files.
+
+## Adding the package to your experiment
 - Open E-Studio
 - Go to **Edit -> Experiment -> Packages** and click **Add**. The Markers package should be listed under **Available Packages**. Click the **Markers** package and click **Ok** and again **Ok** to add the package to your experiment.
 
