@@ -35,7 +35,7 @@ The OpenMarkerDevice routine uses the following parameters:
     - Something went wrong when sending the marker
     CrashOnMarkerErrors is set to True when undefined. Note that the task does not crash when connection with the marker device gets lost during the experiment! Always check your data to make sure markers are received correctly. When CrashOnMarkerErrors is set to False and GenMarkerFile is set to True, marker errors will be saved in the Markers .tsv file. 
 - **DummyMode:** Optional: set to True to use dummy mode and be able to run the task when no marker device is connected (set to False when undefined).
-- **GenMarkerFile:** Optional: set to True to generate a .tsv file that contains information about the markers that were sent during the task and possibly the marker errors that occured (set to True when undefined).
+- **GenMarkerFile:** Optional: set to True to generate a .tsv file that contains information about the markers that were sent during the task and possibly the marker errors that occured (set to True when undefined). Note that markers are only saved when the task has run to completion.
 - **Flash255:** Optional: set to True to send two pulses with value 255 at initialization (set to False when undefined).
 
 ![openmarkerdevice](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/ae20f769-ab0d-4d15-b4f2-028248a48521)
@@ -55,15 +55,15 @@ The SendMarker routine uses the following parameters:
 
 The **SendMarkerTaskEvent** routine sends one or two markers at certain events. Thus, sending the marker is set up as **Task Event** and with this routine a marker can be sent at the Onset and/or Offset of an object. A maximum of two task events can be set with this routine. Make sure the routine is placed before the strObject. See below an explanation of the parameters. For example, to send marker with value 1 at the onset of object "Stimulus" and reset to 0 at the offset of object "Stimulus", use the following parameters: c, "Stimulus", "OnsetTime", 1, 0, "OffsetTime", 0, 0.
 
-Note that this routine cannot be used when one or more Task Events are already set-up for the strObject. In this case, the Task Events are executed, but the Marker as specified in the SendMarkerTaskEvent routine is *not* sent.
+Note that this routine cannot be used when one or more Task Events are already set-up for the strObject. In this case, the Task Events are executed, but the Marker as specified in the SendMarkerTaskEvent routine is *not* sent. Also note that the associated Object cannot be reused without also reusing this SendMarkerTaskEvent object. To reuse the Object without sending markers, a copy should be made instead.
 
 The SendMarkerTaskEvent routine uses the following parameters:
 - **c:** The experiment context allows the user to add variables to the experiment. The routines in the PackageFile may optionally use the experiment context to retrieve the current values of attributes stored in the context. The context is typically the first parameter of every PackageFile routine. Leave at default c.
 - **strObject:** The name of the object to which the marker task events will be added. This value must be a String. For example, "Stimulus".
-- **MarkerTaskEvent1:** The task event where the first marker should be sent (e.g. "OnsetTime" or "OffsetTime"). This value must be a string (include quotation marks).
+- **MarkerTaskEvent1:** The task event where the first marker should be sent (e.g. "OnsetTime" or "OffsetTime"). This value must be a string (include quotation marks). When the OffsetTime is used, make sure to set the PreRelease of the associated object to 0.
 - **MarkerValue1:** The value of the first marker. The value must be an integer between 0 and 255.
 - **MarkerTaskEventDelay1:** Optional: The task event delay of the first marker in ms. For example, when the task event is set to "OnsetTime" of the "Stimulus" object and the delay to 10, the marker will be sent 10 ms after Stimulus.OnsetTime. Default value is 0 (no delay). Note: use this setting with caution and make sure the object has a duration that is at least as long as this parameter.
-- **MarkerTaskEvent2:** Optional: The task event where the second marker should be sent (e.g. "OnsetTime" or "OffsetTime"). This value must be a string (include quotation marks).
+- **MarkerTaskEvent2:** The task event where the second marker should be sent (e.g. "OnsetTime" or "OffsetTime"). This value must be a string (include quotation marks). When the OffsetTime is used, make sure to set the PreRelease of the associated object to 0. 
 - **MarkerValue2:** Optional: The value of the second marker. The value must be an integer between 0 and 255.
 - **MarkerTaskEventDelay2:** Optional: The task event delay of the second marker in ms. For example, when the task event is set to "OffsetTime" of the "Stimulus" object and the delay to 10, the marker will be sent 10 ms after Stimulus.OffsetTime. Default value is 0 (no delay). Note: use this setting with caution and when using the delay, make sure the marker is not overwritten by other markers sent after the object.
 
