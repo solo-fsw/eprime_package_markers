@@ -89,13 +89,20 @@ The UsbParMarkerLeds routine uses the following parameters:
 
 ![usbparmarkerleds](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/67fde596-e505-4749-b706-fc2798c1724a)
 
-### Object Placement and Timing
-It is important to note that the Markers routines do not have a visual component. Thus, during the execution of the Markers objects, what was already presented on the screen, will stay on the screen.
+## Notes
 
+- **Object Placement and Timing**\
+It is important to note that the Markers routines do not have a visual component. Thus, during the execution of the Markers objects, what was already presented on the screen, will stay on the screen.
 To obtain the most accurate timing of a marker (i.e. the marker is sent as closely near the actual event of interest as possible), it is advised to make use of the SendMarkerTaskEvent routine. With this routine, a marker can be sent at the on- or offset of an object.
 
-### Using Multiple Marker Devices
-It is not possible to use the Marker package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples).
+- **Using Multiple Marker Devices**\
+It is not possible to use the Markers package with multiple marker devices, only one marker device can be used with this package. A sample task on how multiple marker devices can be controlled without the Markers package, including explanation can be found in the [Samples folder](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples).
+
+- **Running a task that includes Markers packagecalls, but without the Markers package**
+    - When the Markers package is not installed and you open a task that has Markers packagecalls with **E-Studio** (.es3 file), you get the message: \
+      ![image](https://github.com/user-attachments/assets/f2a5e32f-fb38-4742-b5d4-6bda1b416892)\
+      The task can be run from E-Studio, but the Markers packagecalls are disabled and no markers are sent.
+    - When the Markers package is not installed and you open a task that has Markers packagecalls with **E-Run** (.ebs3 file), the task should run as normal and markers should be sent as normal. However, to prevent accidents (like opening the task in E-Studio and disabling the Markers packagecalls), it is advised to always have       the Markers package installed when you use Markers packagecalls in your task.
 
 ## Limitations
 1. The Markers package cannot be used when multiple marker devices need to be controlled or when multiple marker devices are connected to the PC. 
