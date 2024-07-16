@@ -3,7 +3,7 @@ The Markers package is used to send markers to different Leiden Univ FSW marker 
 
 ## Installation
 These download instructions will make the package available per user account. When different users need to use the package, they must download the package separately.
-- Download the Markers package [here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fsolo-fsw%2Feprime_package_markers%2Ftree%2Fmain%2FPackage%2FMarkers) (download starts immediately).
+- Download the Markers package [here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fsolo-fsw%2Feprime_package_markers%2Ftree%2Fmain%2FPackage%2F) (download starts immediately).
 - Unzip or extract the folder.
 - Place the Markers folder in **C:\Users\\%USERNAME%\Documents\My Experiments\3.0\Packages**. When the Packages folder does not exist, and you receive the message "Windows can't find C:\Users\\%USERNAME%\Documents\My Experiments\3.0\Packages", navigate to C:\Users\\%USERNAME%\Documents\My Experiments\3.0 and create a new folder called "Packages" here. Then, place the Markers folder in the Packages folder.
 
