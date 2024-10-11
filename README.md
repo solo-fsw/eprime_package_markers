@@ -1,6 +1,8 @@
 # ![markers](https://github.com/solo-fsw/eprime_package_markers/assets/56065641/8281b582-73c0-4eee-9e6e-049eadd62d78) E-Prime Markers package 
 The Markers package is used to send markers to different Leiden Univ FSW marker devices ([UsbParMarker](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/UsbParMarker/) and [Eva](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/EVA/)). See [here](https://researchwiki.solo.universiteitleiden.nl/xwiki/wiki/researchwiki.solo.universiteitleiden.nl/view/Hardware/Markers%20and%20Events/) for more information on markers in general.
 
+Note: to send markers via the marker devices **without** the use of the package, see [here](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples#multiple-marker-devices) for instructions.
+
 ## Installation
 These download instructions will make the package available per user account. When different users need to use the package, they must download the package separately.
 - Download the Markers package [here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fsolo-fsw%2Feprime_package_markers%2Ftree%2Fmain%2FPackage%2F) (download starts immediately).
