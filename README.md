@@ -3,6 +3,9 @@ The Markers package is used to send markers to different Leiden Univ FSW marker 
 
 Note: to send markers via the marker devices **without** the use of the package, see [here](https://github.com/solo-fsw/eprime_package_markers/tree/main/Samples#multiple-marker-devices) for instructions.
 
+> [!CAUTION]
+> In Windows 11, if OneDrive is enabled, the markers package may have been moved from the local My Documents folder to the OneDrive Documents folder. This is different from how it is described below. Thus, if your package is stored in **C:\Users\\%USERNAME%\OneDrive - Universiteit Leiden\Documents\My Experiments\3.0\Packages**, make sure to set that as the package location in E-Prime (go to Tools -> Options -> Packages and specify a new search folder for package files).
+
 ## Installation
 These download instructions will make the package available per user account. When different users need to use the package, they must download the package separately.
 - Download the Markers package [here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fsolo-fsw%2Feprime_package_markers%2Ftree%2Fmain%2FPackage%2F) (download starts immediately).
